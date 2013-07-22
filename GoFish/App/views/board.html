@@ -1,5 +1,6 @@
 ﻿<div>
-    <ul data-bind="foreach: cards">
-        <li data-bind="text: suit()+rank()"></li>
+    <ul class="playerHand" data-bind="foreach: playerHand">
+        <li data-bind="compose: { model: $data }">
+        </li>
     </ul>
 </div>

@@ -50,3 +50,92 @@
         margin-bottom: 0;
     }
 }
+
+.playerHand li {
+    list-style: none;
+    margin-right: 10px;
+    width: 100px;
+    float: left;
+}
+
+.cardContainer {
+    position: relative;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    perspective: 1000;
+    height: 150px;
+    width: 100px;
+    z-index: 1;
+}
+
+.card {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    -moz-transition: all 1.0s linear;
+    -webkit-transition: all 1.0s linear;
+    transition: all 1.0s linear;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.cardFront,.cardBack {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cardBack {
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.cardFront .topRank {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cardFront .bottomRank {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cardFront .suit {
+    font-size: 4em;
+    position: absolute;
+    top: 65px;
+    left: 33px;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cardBack i {
+    position: absolute;
+    left: 15px;
+    top: 45px;
+}
+
+.flipped {
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}

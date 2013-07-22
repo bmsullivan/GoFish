@@ -4,16 +4,30 @@
     var board = function () {
         var self = this;
 
-        self.cards = ko.observableArray(createDeck());
+        self.cards = ko.observableArray([]);
+        self.playerHand = ko.observableArray([]);
+        self.opponentHand = ko.observableArray([]);
+
+        self.startNewGame = function() {
+            self.cards(createDeck());
+
+            for (var i = 0; i < 6; i++) {
+                self.playerHand.push(self.cards.pop());
+                self.opponentHand.push(self.cards.pop());
+            }
+        };
+
+        self.startNewGame();
     };
 
     function createDeck() {
-        var suits = ['H', 'S', 'C', 'D'];
+        var suits = ['♥', '♠', '♣', '♦'];
+        var ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
         var deck = [];
         
         for (var i in suits) {
-            for (var j = 1; j < 14; j++) {
-                deck.push(new Card(suits[i], j));
+            for (var j in ranks) {
+                deck.push(new Card(suits[i], ranks[j]));
             }
         }
 
