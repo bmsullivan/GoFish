@@ -136,23 +136,30 @@
     backface-visibility: hidden;
 }
 
-.flipped {
-    -webkit-animation: flip 1s;
+/*.flipped {
+    -webkit-animation: draw 2s;
     -webkit-animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes flip {
-    from {
+@-webkit-keyframes draw {
+    0% {
              -moz-transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
              -webkit-transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
              transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
          }
-    to {
+    50% {
             -moz-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
             -webkit-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
             transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
        }
+
+    100% {
+            -moz-transform: rotateY(180deg) translateX(-510px) translateY(200px) rotate(0);
+            -webkit-transform: rotateY(180deg) translateX(-510px) translateY(200px) rotate(0);
+            transform: rotateY(180deg) translateX(-510px) translateY(200px) rotate(0);
+         }
 }
+    */
 
 .handCard {
     position: relative;

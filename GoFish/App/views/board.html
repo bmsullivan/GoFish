@@ -1,7 +1,7 @@
 ﻿<div>
     <div class="deck">
         <img src="/Content/images/Deck.png"/>
-        <div class="deckCardBinding" data-bind="compose: { model: cards()[0] }"></div>
+        <div class="deckCardBinding" data-bind="compose: { model: cards()[cards().length - 1] }"></div>
     </div>
     <ul class="playerHand" data-bind="foreach: playerHand">
         <li data-bind="compose: { model: $data, view: 'views/handCard' }">
