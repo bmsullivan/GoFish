@@ -74,11 +74,7 @@
     transform-style: preserve-3d;
     height: 100%;
     width: 100%;
-    -moz-transition: all 1.0s linear;
-    -webkit-transition: all 1.0s linear;
-    transition: all 1.0s linear;
-    border: 1px solid #000;
-    border-radius: 5px;
+    -webkit-transform: rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
 }
 
 .cardFront,.cardBack {
@@ -89,15 +85,18 @@
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #fff;
 }
 
-.cardBack {
+.cardFront {
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
-.cardFront .topRank {
+.topRank {
     position: absolute;
     left: 3px;
     top: 1px;
@@ -106,7 +105,7 @@
     backface-visibility: hidden;
 }
 
-.cardFront .bottomRank {
+.bottomRank {
     position: absolute;
     bottom: 5px;
     right: 5px;
@@ -118,7 +117,7 @@
     backface-visibility: hidden;
 }
 
-.cardFront .suit {
+.suit {
     font-size: 4em;
     position: absolute;
     top: 65px;
@@ -132,10 +131,37 @@
     position: absolute;
     left: 15px;
     top: 45px;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .flipped {
-    -moz-transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+    -webkit-animation: flip 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes flip {
+    from {
+             -moz-transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
+             -webkit-transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
+             transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px);
+         }
+    to {
+            -moz-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
+            -webkit-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
+            transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0);
+       }
+}
+
+.handCard {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.deckCardBinding {
+    display: inline-block;
 }
