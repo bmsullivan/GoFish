@@ -51,7 +51,16 @@
     }
 }
 
-.playerHand li {
+.shell {
+    background: url(images/woodBackground.jpg);
+}
+
+.playerHand, .opponentHand {
+    overflow: hidden;
+    height: 155px;
+}
+
+.playerHand li, .opponentHand li {
     list-style: none;
     margin-right: 10px;
     width: 100px;
@@ -81,7 +90,6 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    cursor: pointer;
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -127,16 +135,20 @@
     backface-visibility: hidden;
 }
 
-.cardBack i {
+.cardBack i, .opponentCard i {
     position: absolute;
     left: 15px;
     top: 45px;
+}
+
+.cardBack i {
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    left: 24px;
 }
 
-.playerCard {
+.playerCard, .opponentCard {
     position: relative;
     width: 100px;
     height: 150px;
@@ -146,4 +158,8 @@
 
 .deckCardBinding {
     display: inline-block;
+}
+
+.deck {
+    height: 300px;
 }

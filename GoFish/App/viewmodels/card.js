@@ -9,7 +9,7 @@
         self.rank = ko.observable(rank || 'A');
 
         self.draw = function () {
-            app.trigger('drawCard', this);
+            app.trigger('drawOpponentCard', this);
         };
     };
 
