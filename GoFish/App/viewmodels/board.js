@@ -32,15 +32,15 @@
                     "             transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px); " +
                     "         } " +
                     "    50% { " +
-                    "            -moz-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0); " +
-                    "            -webkit-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0); " +
+                    "            -moz-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0) scale(2); " +
+                    "            -webkit-transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0) scale(2); " +
                     "            transform: rotateY(180deg) translateX(-100px) translateY(40px) rotate(0); " +
                     "       } " +
                     " " +
                     "    100% { " +
-                    "            -moz-transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0); " +
-                    "            -webkit-transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0); " +
-                    "            transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0); " +
+                    "            -moz-transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0) scale(1); " +
+                    "            -webkit-transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0) scale(1); " +
+                    "            transform: rotateY(180deg) translateX(" + translateX + "px) translateY(300px) rotate(0) scale(1); " +
                     "         } " +
                     "} ";
 
@@ -65,12 +65,6 @@
                     "             -webkit-transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px); " +
                     "             transform: rotateY(0) rotate(45deg) skew(-18deg, -18deg) scale(.73) translate(-15px, 190px); " +
                     "         } " +
-                    "    50% { " +
-                    "            -moz-transform: rotateY(0deg) translateX(100px) translateY(40px) rotate(0); " +
-                    "            -webkit-transform: rotateY(0deg) translateX(100px) translateY(40px) rotate(0); " +
-                    "            transform: rotateY(0deg) translateX(100px) translateY(40px) rotate(0); " +
-                    "       } " +
-                    " " +
                     "    100% { " +
                     "            -moz-transform: rotateY(0deg) translateX(" + translateX + "px) translateY(-162px) rotate(0); " +
                     "            -webkit-transform: rotateY(0deg) translateX(" + translateX + "px) translateY(-162px) rotate(0); " +
@@ -84,7 +78,7 @@
             });
 
             document.styleSheets[document.styleSheets.length - 1].insertRule(keyframes, 0);
-            cardNode[0].style.webkitAnimation = 'draw' + animationCount + ' 2s forwards';
+            cardNode[0].style.webkitAnimation = 'draw' + animationCount + ' 1s forwards';
 
             animationCount++;
 
